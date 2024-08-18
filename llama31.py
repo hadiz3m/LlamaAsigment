@@ -667,7 +667,7 @@ def main(
 
     # load the val data shard
     data_loader = DistributedShardedDataLoader(
-        filename_pattern="TinyStories_val2.bin",
+        filename_pattern="TinyStories_val.bin",
         # filename_pattern=Root_dir+"\\tinystories/*_val.bin",
         B=max_batch_size,
         T=max_seq_len,
