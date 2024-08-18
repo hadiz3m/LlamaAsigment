@@ -656,7 +656,7 @@ class DistributedShardedDataLoader:
 def main(
     ckpt_dir: str = "llama-models/models/llama3_1/Meta-Llama-3.1-8B",
     # tokenizer_path: str = "llama-models/models/llama3_1/Meta-Llama-3.1-8B/tokenizer.model",
-    tokenizer_path: str = Root_dir+"/tokenizer.model",
+    tokenizer_path: str = "tokenizer.model",
     temperature: float = 1.0,
     top_p: float = 0.9,
     max_seq_len: int = 64,
@@ -667,7 +667,7 @@ def main(
 
     # load the val data shard
     data_loader = DistributedShardedDataLoader(
-        filename_pattern=Root_dir+"\\textData/*_val.bin",
+        filename_pattern="TinyStories_val2.bin",
         # filename_pattern=Root_dir+"\\tinystories/*_val.bin",
         B=max_batch_size,
         T=max_seq_len,
@@ -703,7 +703,7 @@ def main(
 
         if step % 30 == 0 :
             model.eval()
-            torch.save(model.state_dict(), Root_dir+'/model.pt')
+            torch.save(model.state_dict(), 'model.pt')
 
 
     # and now generate
@@ -735,7 +735,7 @@ def main(
 def GenerateTest(
     ckpt_dir: str = "llama-models/models/llama3_1/Meta-Llama-3.1-8B",
     # tokenizer_path: str = "llama-models/models/llama3_1/Meta-Llama-3.1-8B/tokenizer.model",
-    tokenizer_path: str = Root_dir+"/tokenizer.model",
+    tokenizer_path: str = "tokenizer.model",
     temperature: float = 1.0,
     top_p: float = 0.9,
     max_seq_len: int = 64,
@@ -767,7 +767,7 @@ def GenerateTest(
 
     # super simple training loop to start
     model = llama.model
-    model = torch.load(Root_dir+'\\model.pt')
+    model = torch.load(+'model.pt')
     # and now generate
     # model.eval()
     prompts: List[str] = [
