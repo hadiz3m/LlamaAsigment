@@ -38,11 +38,11 @@ Root_dir = os.path.dirname(__file__)
 @dataclass
 class ModelArgs:
     dim: int = 1024
-    n_layers: int = 8
-    n_heads: int = 8
+    n_layers: int = 32
+    n_heads: int = 32
     n_kv_heads: Optional[int] = None
     vocab_size: int = -1
-    multiple_of: int = 64  # make SwiGLU hidden layer size multiple of large power of 2
+    multiple_of: int = 512  # make SwiGLU hidden layer size multiple of large power of 2
     ffn_dim_multiplier: Optional[float] = None
     norm_eps: float = 1e-5
     rope_theta: float = 500000
