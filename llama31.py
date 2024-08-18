@@ -767,7 +767,7 @@ def GenerateTest(
 
     # super simple training loop to start
     model = llama.model
-    model = torch.load(+'model.pt')
+    model = torch.load('model.pt')
     # and now generate
     # model.eval()
     prompts: List[str] = [
