@@ -691,7 +691,7 @@ def main(
     model.train()
     # optimizer = model.configure_optimizers(learning_rate=1e-3, weight_decay=0.4)
     optimizer = model.configure_optimizers(learning_rate=0.01, weight_decay=0.4)
-    for step in range(10000):
+    for step in range(20000):
         optimizer.zero_grad()
         x, y , position , totalltoken = data_loader.next_batch()
         x, y = x.cuda(), y.cuda()
