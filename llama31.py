@@ -793,6 +793,6 @@ def GenerateTest(
 
 
 if __name__ == "__main__":
-    # fire.Fire(main)
+    fire.Fire(main)
 
-    fire.Fire(GenerateTest)
+    # fire.Fire(GenerateTest)
