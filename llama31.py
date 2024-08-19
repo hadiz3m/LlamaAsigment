@@ -47,7 +47,7 @@ class ModelArgs:
     norm_eps: float = 1e-5
     rope_theta: float = 500000
     use_scaled_rope: bool = False
-    max_batch_size: int = 32
+    max_batch_size: int = 512
     max_seq_len: int = 512
     flash: bool = False # use flash attention?
 
@@ -660,8 +660,8 @@ def main(
     temperature: float = 1.0,
     top_p: float = 0.9,
     max_seq_len: int = 64,
-    max_gen_len: int = 64,
-    max_batch_size: int = 8,
+    max_gen_len: int = 256,
+    max_batch_size: int = 256,
     flash: bool = True,
 ):
 
