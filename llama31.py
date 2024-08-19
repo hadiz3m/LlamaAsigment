@@ -689,8 +689,8 @@ def main(
     # super simple training loop to start
     model = llama.model
     model.train()
-    # optimizer = model.configure_optimizers(learning_rate=1e-3, weight_decay=0.4)
-    optimizer = model.configure_optimizers(learning_rate=0.01, weight_decay=0.4)
+    optimizer = model.configure_optimizers(learning_rate=1e-3, weight_decay=0.4)
+    # optimizer = model.configure_optimizers(learning_rate=0.01, weight_decay=0.4)
     for step in range(20000):
         optimizer.zero_grad()
         x, y , position , totalltoken = data_loader.next_batch()
