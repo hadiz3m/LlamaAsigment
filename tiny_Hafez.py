@@ -200,7 +200,8 @@ def process_shard(shard_index, shard_filename, tokenizer_path):
 
 def tokenize(tokenizer_path):
     # shard 0 will be the val split, rest is train
-    data_dir = os.path.join(DATA_CACHE_DIR, "Data-text")
+    # data_dir = os.path.join(DATA_CACHE_DIR, "Data-text")
+    data_dir = DATA_CACHE_DIR
     shard_filenames = sorted(glob.glob(os.path.join(data_dir, "*.json")))
     val_shards = [shard_filenames[0]]
     train_shards = shard_filenames[1:]
@@ -225,7 +226,7 @@ def tokenize(tokenizer_path):
 # -----------------------------------------------------------------------------
 
 if __name__ == "__main__":
-    DATA_CACHE_DIR = os.path.join(os.path.dirname(__file__), "textData")
-    tokenizer_path = os.path.dirname(__file__)+"\\tokenizer.model"
+    DATA_CACHE_DIR = "Data"
+    tokenizer_path ="tokenizer.model"
     # download()
     tokenize(tokenizer_path)
