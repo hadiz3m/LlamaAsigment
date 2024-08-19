@@ -659,7 +659,7 @@ def main(
     tokenizer_path: str = "tokenizer.model",
     temperature: float = 1.0,
     top_p: float = 0.9,
-    max_seq_len: int = 32,
+    max_seq_len: int = 16,
     max_gen_len: int = 128,
     max_batch_size: int = 128,
     flash: bool = True,
